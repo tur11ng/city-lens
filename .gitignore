@@ -238,5 +238,4 @@ fabric.properties
 # End of https://www.toptal.com/developers/gitignore/api/webstorm,node,react,code
 
 Location_history.json
-docs/
 .idea/
