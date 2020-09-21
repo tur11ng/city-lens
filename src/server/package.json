@@ -1,0 +1,32 @@
+{
+  "author": "st1064870",
+  "name": "city-lens-server",
+  "private": true,
+  "scripts": {
+    "start": "node src/bin/www"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "cors": "*",
+    "debug": "*",
+    "express": "*",
+    "express-validator": "*",
+    "morgan": "*",
+    "pg": "*",
+    "pg-hstore": "*",
+    "pg-promise": "*",
+    "sequelize-auto": "*",
+    "serve-favicon": "*",
+    "express-session": "*",
+    "express-fileupload": "*",
+    "mongoose": "*",
+    "mongoose-bcrypt": "*",
+    "bcrypt": "*",
+    "crypto": "*",
+    "xml-js": "*",
+    "json-csv": "*",
+    "objects-to-csv": "*"
+  }
+}
