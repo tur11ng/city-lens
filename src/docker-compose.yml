@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+    city-lens-client:
+        build: ./client/
+        container_name: city-lens-client
+        restart: always
+        ports:
+          - 8080:8080
+#        volumes:
+#          - ./server:/usr/src/city-lens-client
+    city-lens-server:
+        build: ./server/
+        container_name: city-lens-server
+        restart: always
+        ports:
+          - 3000:3000
+#        volumes:
+#          - ./server:/usr/src/city-lens-server
+        depends_on:
+          - city-lens-storage
+    city-lens-storage:
+        build: ./storage/
+        container_name: city-lens-storage
+        restart: always
+        ports:
+          - 27017:27017
+          - 28018:28018
+        volumes:
+          - ./storage/init-storage.js:/docker-entrypoint-initdb.d/init-storage.js:ro
