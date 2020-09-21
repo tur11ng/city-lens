@@ -1,0 +1,71 @@
+{
+  "author": "st1064870",
+  "name": "city-lens-client",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties"
+    ]
+  },
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "version": "0.0.1",
+  "description": "",
+  "dependencies": {
+    "@babel/core": "*",
+    "@babel/plugin-proposal-class-properties": "*",
+    "@babel/preset-env": "*",
+    "@babel/preset-react": "*",
+    "axios": "*",
+    "babel-loader": "*",
+    "bcrypt": "*",
+    "bootstrap": "*",
+    "chart.js": "*",
+    "css-loader": "*",
+    "file-loader": "*",
+    "geolib": "*",
+    "html-loader": "*",
+    "html-webpack-plugin": "*",
+    "leaflet": "*",
+    "leaflet-lasso": "*",
+    "node-fetch": "*",
+    "password-validator": "*",
+    "query-string": "*",
+    "react": "*",
+    "react-bootstrap": "*",
+    "react-chartjs-2": "*",
+    "react-dom": "*",
+    "react-files": "*",
+    "react-leaflet": "*",
+    "react-leaflet-heatmap-layer": "*",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "*",
+    "turf": "*",
+    "validator": "*",
+    "webpack": "*",
+    "webpack-cli": "*",
+    "webpack-dev-server": "*",
+    "@turf/points-within-polygon": "*",
+    "@turf/turf": "*",
+    "bootstrap-select": "*",
+    "leaflet-heatmap": "*",
+    "jquery": "*",
+    "randomcolor": "*",
+    "chartjs-plugin-annotation": "*",
+    "@babel/runtime": "*",
+    "@babel/plugin-transform-runtime": "*",
+    "@babel/plugin-proposal-export-default-from": "*",
+    "@babel/polyfill": "*",
+    "xml-js": "*",
+    "downloadjs": "*",
+    "leaflet-area-select": "*"
+  }
+}
