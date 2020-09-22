@@ -19,3 +19,7 @@ From the government's perspective users' data are aggregated and various statist
     docker-compose up --build
     firefox 127.0.0.1:8008
 ```
+
+## Screenshots
+
+![](https://github.com/st1064870/city-lens/blob/master/docs/presentation/1.png)
