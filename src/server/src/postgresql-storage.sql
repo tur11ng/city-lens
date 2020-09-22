@@ -34,10 +34,10 @@ create table "location"
 
 create table "activity"
 (
-    "id"          serial    not null primary key,
-    "location_id" int       not null,
-    "user_id"     int       not null,
-    "timestamp"   timestamp not null,
+    "id"          serial        not null primary key,
+    "location_id" int           not null,
+    "user_id"     int           not null,
+    "timestamp"   timestamp     not null,
     "type"        activity_type not null,
     constraint "fk_location"
         foreign key ("location_id")
@@ -152,8 +152,9 @@ begin
 end;
 $$ language plpgsql;
 
-create or replace function user_activity_points(user_id int, area geography(polygon, 4326), start_year int, end_year int,
-                                           start_month int, end_month int)
+create or replace function user_activity_points(user_id int, area geography(polygon, 4326), start_year int,
+                                                end_year int,
+                                                start_month int, end_month int)
     returns table
             (
                 geog geography(point, 4326)
@@ -204,9 +205,15 @@ $$ language plpgsql;
 insert into "user" ("type", "name", "password", "email")
 values ('ADMIN', 'admin', 'password', 'admin@example.com');
 
-create or replace function admin_records_per_user() returns table(user_id int, cnt int) as
+create or replace function admin_records_per_user()
+    returns table
+            (
+                user_id int,
+                cnt     int
+            )
+as
 $$
-    #variable_conflict use_column
+    # variable_conflict use_column
 begin
     select "user_id", count("activity"."id") as cnt
     from activity
@@ -214,7 +221,13 @@ begin
 end;
 $$ language plpgsql;
 
-create or replace function admin_records_per_year() returns table(year int, cnt int) as
+create or replace function admin_records_per_year()
+    returns table
+            (
+                year int,
+                cnt  int
+            )
+as
 $$
 begin
     select extract(YEAR from "activity"."timestamp") as year, count("activity"."id") as cnt
@@ -224,7 +237,13 @@ begin
 end;
 $$ language plpgsql;
 
-create or replace function admin_records_per_month() returns table(month int, cnt int) as
+create or replace function admin_records_per_month()
+    returns table
+            (
+                month int,
+                cnt   int
+            )
+as
 $$
 begin
     select extract(MONTH from "activity"."timestamp") as month, count("activity"."id") as cnt
@@ -234,7 +253,13 @@ begin
 end;
 $$ language plpgsql;
 
-create or replace function admin_records_per_day() returns table(day int, cnt int) as
+create or replace function admin_records_per_day()
+    returns table
+            (
+                day int,
+                cnt int
+            )
+as
 $$
 begin
     select extract(DAY from "activity"."timestamp") as day, count("activity"."id") as cnt
@@ -244,7 +269,13 @@ begin
 end;
 $$ language plpgsql;
 
-create or replace function admin_records_per_hour() returns table(hour int, cnt int) as
+create or replace function admin_records_per_hour()
+    returns table
+            (
+                hour int,
+                cnt  int
+            )
+as
 $$
 begin
     select extract(HOUR from "activity"."timestamp") as hour, count("activity"."id") as cnt

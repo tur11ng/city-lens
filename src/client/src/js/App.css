@@ -5,7 +5,10 @@
         height: 50vh;
     }
 
-    button:not(.navbar-toggler) { width: 100%; display:block; }
+    button:not(.navbar-toggler) {
+        width: 100%;
+        display: block;
+    }
 }
 
 @media all and (min-width: 576px) {
@@ -43,6 +46,11 @@
     z-index: 1;
 }
 
-@media(min-width:768px){}
-@media(min-width:992px){}
-@media(min-width:1200px){}
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}

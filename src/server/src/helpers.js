@@ -1,4 +1,3 @@
-
 module.exports = {
-    encrypt: encrypt
-};
+  encrypt: encrypt,
+}
